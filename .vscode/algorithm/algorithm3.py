@@ -11,17 +11,17 @@ number = int(input())
 
 for i in range(number):    #입력된 문자열의 개수는 여러가지이므로, 그리고 엔터 단위로 끊긴다.
     a = input()
-    cnt = 0
+    cnt = 0   #for문 안에서 어디든 쓰일 수 있음
     for aword in a:
         if aword == '(':
             cnt += 1
         elif aword == ')':
                 cnt -= 1
-        if cnt<0:
+        if cnt<0:   #무조건 거치는 조건문
             print("NO")
-            break
-         #break문을 안 거칠 경우
-    #for문 탈출
+            break  #이 for문에서 나온다는 의미
+         
+
     if cnt == 0:   ##오로지 cnt의 값이 0일때만 yes 체크
         print("YES")
     elif cnt >0:
