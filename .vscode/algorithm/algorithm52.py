@@ -1,5 +1,8 @@
 import sys
 
+
+###나중에 풀어보기!!###
+
 n = int(sys.stdin.readline())
 
 num = [0]*10001  #리스트 모두에 0을 할당, 총 10001개를 생성
