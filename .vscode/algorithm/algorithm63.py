@@ -18,5 +18,3 @@ else:
     arr1 = line - num + 1
     arr2 = num
     print(f'{arr1}/{arr2}')
-    
-    
